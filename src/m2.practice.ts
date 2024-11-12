@@ -11,19 +11,33 @@
     // role (optional, with type 'admin' | 'user' | 'guest')
     // The function should log these values or perform a basic action.
     type EmployeType = {
-        name:string,
+        name: string,
         age: number,
-        role?:'admin' | 'user' |'guest',
+        role?: 'admin' | 'user' | 'guest',
     }
-    
-    const employe1:EmployeType={
-        name:"Md Tasdid Nayem",
-        age: 29,
-        role:'admin'
-    }
-    console.log(employe1)
 
-    //**************************************** */
+    const employe1: EmployeType = {
+        name: "Md Tasdid Nayem",
+        age: 29,
+        role: 'admin'
+    }
+
+    
+    type book={
+        title:string,
+        author:string,
+        yearPublished:number
+    }
+    const getBookProperty=<T, K extends keyof T>(book:T,key:K)=>{
+        return book[key]
+    }
+    const myBook:book = {
+        title:"Learn Typescript",
+        author:"Jhankar Mahbub",
+        yearPublished:2025
+    }
+    const author = getBookProperty(myBook,"author")
+
 
     //
 }
